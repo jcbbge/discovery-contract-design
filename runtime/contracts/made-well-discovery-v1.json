@@ -1,0 +1,523 @@
+{
+  "schema": "pipeline-contract/v1",
+  "id": "made-well/discovery",
+  "version": 1,
+  "name": "Made Well / Discovery",
+  "source_revision": "arc:e522fb0e",
+  "source_hashes": {
+    "/home/jrg/projects/discovery-contract-design/MARKER_INVENTORY.md": "c1cc0a559dc3e70c01f55de61f0440b61058d222cbda9e58bb98b011ee91e562",
+    "/home/jrg/projects/infinity/arc/.madewell/skills/discovery.md": "e438c8e95b5f202f62eb67fc7b189d02ec64b7d6824bbe234ea41c267a8c981f",
+    "/home/jrg/projects/infinity/arc/.madewell/ground/PROTOCOL.md": "2b81f6d17946ba7b45f26b091a9555c21bf2bd13017903f1c3c2bbf02144483e",
+    "/home/jrg/projects/infinity/arc/.madewell/ground/PICTURE.md": "b8f54e83d9c0d8b528ad2d277d211db5a7e5169814c29eb215a3ef7c5ac63aae",
+    "/home/jrg/projects/infinity/arc/.madewell/ground/ROOTS.md": "b6a9c68ed80484c97faf1416b3c33080b87aec5de0702c0efad1a7f1f52296e5"
+  },
+  "progress": {
+    "denominator": 72,
+    "weights": "equal",
+    "settled": [
+      "satisfied",
+      "satisfied_by_rule"
+    ]
+  },
+  "stages": [
+    {
+      "id": "A",
+      "name": "Declare run"
+    },
+    {
+      "id": "N",
+      "name": "Live conversation specialization"
+    },
+    {
+      "id": "B",
+      "name": "Look before adding"
+    },
+    {
+      "id": "C",
+      "name": "Ground"
+    },
+    {
+      "id": "D",
+      "name": "Classify input"
+    },
+    {
+      "id": "E",
+      "name": "Choose pass mode"
+    },
+    {
+      "id": "F",
+      "name": "Apply lenses"
+    },
+    {
+      "id": "L",
+      "name": "Cross-artifact synthesis"
+    },
+    {
+      "id": "H",
+      "name": "The One Thing"
+    },
+    {
+      "id": "I",
+      "name": "PRD compression"
+    },
+    {
+      "id": "J",
+      "name": "Route findings"
+    },
+    {
+      "id": "K",
+      "name": "Name things and questions"
+    },
+    {
+      "id": "M",
+      "name": "Reflect, review and rack"
+    }
+  ],
+  "markers": [
+    {
+      "id": "A01",
+      "stage": "A",
+      "requirement": "Run mode \u2192 `live` or `blind`, recorded **before reading source**."
+    },
+    {
+      "id": "A02",
+      "stage": "A",
+      "requirement": "Ground disposition \u2192 `on` for live or explicitly `skipped (blind)`."
+    },
+    {
+      "id": "A03",
+      "stage": "A",
+      "requirement": "Rack disposition \u2192 `loaded` or `not loaded`, with reason (blind must not load rack)."
+    },
+    {
+      "id": "N01",
+      "stage": "N",
+      "requirement": "Determine whether input is live conversation or a supplied artifact."
+    },
+    {
+      "id": "N02",
+      "stage": "N",
+      "requirement": "If live, invite unorganized narration and listen without interruption; else authorized bypass."
+    },
+    {
+      "id": "N03",
+      "stage": "N",
+      "requirement": "If live, do classification/lenses internally and Steps 2.5\u20135 aloud; unrelated work is captured on rack immediately with acknowledgement, then return; else bypass. Such capture is a specific exception, not permission to skip the Step 5 draft/review of the current discovery."
+    },
+    {
+      "id": "B01",
+      "stage": "B",
+      "requirement": "Current-depth rack \u2192 path `P/stock/`, inventory or `blind: prohibited`."
+    },
+    {
+      "id": "B02",
+      "stage": "B",
+      "requirement": "Decisions \u2192 `DECISIONS.md` read or `blind: prohibited`."
+    },
+    {
+      "id": "B03",
+      "stage": "B",
+      "requirement": "Product vision \u2192 `PRODUCT.md` read or `blind: prohibited`."
+    },
+    {
+      "id": "B04",
+      "stage": "B",
+      "requirement": "Paired source \u2192 paired primary artifact read, explicitly `none`, or `blind: prohibited` if it is a prior analysis/answer key. Do not conflate \u201cno pair\u201d with \u201cpair not checked\u201d; do not assume every primary paired artifact is prohibited in blind mode."
+    },
+    {
+      "id": "C01",
+      "stage": "C",
+      "requirement": "Ground applicability/mode \u2192 start Ground in live, or `blind: prohibited` with no reads."
+    },
+    {
+      "id": "C02",
+      "stage": "C",
+      "requirement": "Read project's `ground/ROOTS.md` \u2192 identify kernel/project roots and external owners (live) or blind skip."
+    },
+    {
+      "id": "C03",
+      "stage": "C",
+      "requirement": "Preflight paths \u2192 confirm existence/misses explicitly; `NO EXISTING IMPLEMENTATION \u2014 net new` for a genuine miss (live) or blind skip."
+    },
+    {
+      "id": "C04",
+      "stage": "C",
+      "requirement": "Extract task nouns/surfaces/values \u2192 search terms and owner for each external value (live) or blind skip."
+    },
+    {
+      "id": "C05",
+      "stage": "C",
+      "requirement": "Corpus sweep \u2192 relevant existing decisions, product, rack/bench/finished, guides/docs/trade, with `path | what it is | relevance | one line` table, locked decisions each file:line, open questions/contradictions each file:line or UNKNOWN, and short corpus synthesis (live) or blind skip."
+    },
+    {
+      "id": "C06",
+      "stage": "C",
+      "requirement": "Material sweep \u2192 locate/read actual material or external system of record; per relevant surface record `path | lines | BUILT/PARTIAL/NET-NEW | one line`, gap and contradiction; record `OWNER: <system> \u2014 NOT READ` if inaccessible (live) or blind skip."
+    },
+    {
+      "id": "C07",
+      "stage": "C",
+      "requirement": "Separate owner from mirror \u2192 for externally owned claims, show owner evidence or mark unverified (live) or blind skip."
+    },
+    {
+      "id": "C08",
+      "stage": "C",
+      "requirement": "Present corpus half in the `ground/PICTURE.md` shape (spoken is sufficient; write only if requested) (live) or blind skip."
+    },
+    {
+      "id": "C09",
+      "stage": "C",
+      "requirement": "Present material half in the `ground/PICTURE.md` shape (spoken is sufficient; write only if requested) (live) or blind skip."
+    },
+    {
+      "id": "C10",
+      "stage": "C",
+      "requirement": "Choose own-context by default or document size-triggered other-hands exception (live) or blind skip."
+    },
+    {
+      "id": "C11",
+      "stage": "C",
+      "requirement": "Synthesize both halves into the picture's final gap: required vs actual; binding locked decisions; open decisions classified lead-owned vs external; recommended next move with file:line anchors. Every behavioral claim cited (live) or blind skip."
+    },
+    {
+      "id": "C12",
+      "stage": "C",
+      "requirement": "Stop and present decision-ready picture **before acting**; Ground remains read-only (live) or blind skip. Ground does not itself mint stock."
+    },
+    {
+      "id": "D01",
+      "stage": "D",
+      "requirement": "Source type \u2192 brain dump/transcript/meeting/AI chat/planning note/document (or explicit extension), with source path."
+    },
+    {
+      "id": "D02",
+      "stage": "D",
+      "requirement": "Artifact date \u2192 event date, **not** analysis date; unknown must be explicit."
+    },
+    {
+      "id": "D03",
+      "stage": "D",
+      "requirement": "Participants \u2192 present actors and their roles, including explicit solo/unknown."
+    },
+    {
+      "id": "D04",
+      "stage": "D",
+      "requirement": "Off-stage named actors \u2192 list or explicit none."
+    },
+    {
+      "id": "D05",
+      "stage": "D",
+      "requirement": "Maturity \u2192 `SUBSTRATE | IDEATION | PLANNING | EXECUTION | VERIFICATION | FIELD`, with basis."
+    },
+    {
+      "id": "D06",
+      "stage": "D",
+      "requirement": "Mixed-maturity treatment \u2192 per-section classifications or documented single-maturity basis; FIELD rubric handled correctly."
+    },
+    {
+      "id": "D07",
+      "stage": "D",
+      "requirement": "Signal density \u2192 HIGH / MED / LOW, with short rationale."
+    },
+    {
+      "id": "E01",
+      "stage": "E",
+      "requirement": "Distinct-topic count \u2192 count **topics, not lines**; record boundaries/basis."
+    },
+    {
+      "id": "E02",
+      "stage": "E",
+      "requirement": "Select processing route \u2192 single-pass, deep-comb, or cross-artifact; justify exceptional overrides (e.g., serial walkthrough)."
+    },
+    {
+      "id": "E03",
+      "stage": "E",
+      "requirement": "Stable slice addresses \u2192 for deep-comb with unusable line ranges, fold into numbered segments, commit the copy beside the original (not a scratch file), and cite segments; if addresses already stable, record that basis; otherwise rule-bypass citing `single-pass`/`cross-artifact`."
+    },
+    {
+      "id": "E04",
+      "stage": "E",
+      "requirement": "Topic map and confirmation \u2192 for deep-comb, 5\u20138 scoped slices and **human confirmation before fan-out**; otherwise rule-bypass."
+    },
+    {
+      "id": "E05",
+      "stage": "E",
+      "requirement": "Isolated reader execution \u2192 for deep-comb, scope each reader to its slice; otherwise rule-bypass."
+    },
+    {
+      "id": "E06",
+      "stage": "E",
+      "requirement": "Cross-cut synthesis \u2192 for deep-comb, reconcile outputs and keep cross-cuts distinct from per-slice findings; otherwise rule-bypass. Number of slices does not change marker count."
+    },
+    {
+      "id": "F01",
+      "stage": "F",
+      "requirement": "Substance \u2192 signals; HIGH-density friction inventory (#, friction, affected person, root cause); explicitly no findings if none."
+    },
+    {
+      "id": "F02",
+      "stage": "F",
+      "requirement": "People \u2192 each person's optimization and actual vocabulary; note `context.language` implications."
+    },
+    {
+      "id": "F03",
+      "stage": "F",
+      "requirement": "Process \u2192 actual/shadow workflow, decision/communication practice."
+    },
+    {
+      "id": "F04",
+      "stage": "F",
+      "requirement": "Gap \u2192 unanswered questions, unvalidated assumptions, unexplained references."
+    },
+    {
+      "id": "F05",
+      "stage": "F",
+      "requirement": "Subtext \u2192 select and apply the *correct* rubric for meeting/human conversation, AI chat, or solo source; maturity-aware interpretation."
+    },
+    {
+      "id": "F06",
+      "stage": "F",
+      "requirement": "Meta \u2192 process/skill/rack improvements or explicit no findings; do not quietly turn meta into product stock."
+    },
+    {
+      "id": "F07",
+      "stage": "F",
+      "requirement": "Trade lens slot \u2192 applicable loaded trade's additional lenses applied **after** core, or explicitly `no trade loaded`. Variable observations do not create new process markers."
+    },
+    {
+      "id": "L01",
+      "stage": "L",
+      "requirement": "Determine paired-source applicability; when applicable, verify prerequisite Step 0.5 current design/direction loaded."
+    },
+    {
+      "id": "L02",
+      "stage": "L",
+      "requirement": "ALIGNMENTS \u2192 record settled agreements with `do not reopen`, or authorized no-pair bypass."
+    },
+    {
+      "id": "L03",
+      "stage": "L",
+      "requirement": "DISCREPANCY MAP \u2192 assumption vs existing state vs consequence vs decision, ranked by leverage, or bypass."
+    },
+    {
+      "id": "L04",
+      "stage": "L",
+      "requirement": "THROUGH-LINE \u2192 single root connecting discrepancies, or bypass; only cross-cuts enter stock at synthesis."
+    },
+    {
+      "id": "H01",
+      "stage": "H",
+      "requirement": "Identify the single most important *not already written down* finding, without hedging, citing its basis."
+    },
+    {
+      "id": "H02",
+      "stage": "H",
+      "requirement": "Record it at its proper durable address: `PRODUCT.md`, the rack, or `DECISIONS.md` (the address may be proposed until the Step 5 human gate permits the write). Do not count a statement living only in chat as recorded."
+    },
+    {
+      "id": "I01",
+      "stage": "I",
+      "requirement": "Determine whether source is PRD/compression-shaped; if not, record rule-bypass for `I02\u2013I05`."
+    },
+    {
+      "id": "I02",
+      "stage": "I",
+      "requirement": "What survived from earlier discussion \u2192 results or authorized non-PRD bypass."
+    },
+    {
+      "id": "I03",
+      "stage": "I",
+      "requirement": "What was dropped and what was added \u2192 both compared or authorized bypass."
+    },
+    {
+      "id": "I04",
+      "stage": "I",
+      "requirement": "Every metric checked for instrument and baseline \u2192 inventory/verdicts or authorized bypass."
+    },
+    {
+      "id": "I05",
+      "stage": "I",
+      "requirement": "\u201cComplete blueprint\u201d claim tested for structural gaps \u2192 verdict, claim absent, or authorized bypass."
+    },
+    {
+      "id": "J01",
+      "stage": "J",
+      "requirement": "Candidate set declared ready for routing; retain source pointers and lens for each; no fixed number of findings."
+    },
+    {
+      "id": "J02",
+      "stage": "J",
+      "requirement": "Each meaningful finding has exactly one `rack | decision | release` disposition; releases **named**, never silently discarded."
+    },
+    {
+      "id": "J03",
+      "stage": "J",
+      "requirement": "Validate all six source-required fields for each finding: `ID | Lens | Finding (one sentence) | Disposition | Evidence | Attribution`; mark attribution stated/inferred and qualify consequential inference."
+    },
+    {
+      "id": "J04",
+      "stage": "J",
+      "requirement": "Duplicate/repeated decision check **per candidate at write time**, with timestamped rack search and decisions reference; do not substitute Step 0.5's initial stock inventory or re-rack a duplicate."
+    },
+    {
+      "id": "J05",
+      "stage": "J",
+      "requirement": "For in-flight work, preserve `in-flight` on rack, verdict it **first** before racking more, and never bypass the gate; otherwise rule-bypass."
+    },
+    {
+      "id": "J06",
+      "stage": "J",
+      "requirement": "For transcript-derived stock, propose **title + corpus path** pointer, not a body copy; preserve corpus boundary."
+    },
+    {
+      "id": "K01",
+      "stage": "K",
+      "requirement": "Name surfaced patterns, gaps and shadow workflows, or explicitly record none."
+    },
+    {
+      "id": "K02",
+      "stage": "K",
+      "requirement": "Add new cross-artifact questions to `DECISIONS.md` or `PRODUCT.md` (propose before human gate if required); explicit none if absent."
+    },
+    {
+      "id": "K03",
+      "stage": "K",
+      "requirement": "Close questions this artifact answers, with cited source; explicit none if absent."
+    },
+    {
+      "id": "M01",
+      "stage": "M",
+      "requirement": "Reflect in plain language: \u201chere's what I heard.\u201d"
+    },
+    {
+      "id": "M02",
+      "stage": "M",
+      "requirement": "Present **draft before asking**, with ready-to-rack / needs-decision / named-release proposals and scope."
+    },
+    {
+      "id": "M03",
+      "stage": "M",
+      "requirement": "Ask operator \u201cDoes that match what you meant?\u201d and record review request/status; never infer agreement from silence."
+    },
+    {
+      "id": "M04",
+      "stage": "M",
+      "requirement": "Capture every ruling **verbatim with timestamp**, including confirmations; treat reply as a second source artifact."
+    },
+    {
+      "id": "M05",
+      "stage": "M",
+      "requirement": "Cite rulings inline; where ruling contradicts a finding, retain struck-through prior reading and show corrected one."
+    },
+    {
+      "id": "M06",
+      "stage": "M",
+      "requirement": "If operator unavailable, carry explicit open question; otherwise record their rulings. **The skill permits racking while unavailable**, not silent approval."
+    },
+    {
+      "id": "M07",
+      "stage": "M",
+      "requirement": "Publish eligible stock to current-depth `P/stock/<slug>.md`, or record justified absence; stock points to corpus rather than copying transcript body."
+    },
+    {
+      "id": "M08",
+      "stage": "M",
+      "requirement": "Record decided/unmade decisions in `DECISIONS.md` / `PRODUCT.md`, or explicit none; open threads have an actual reader."
+    },
+    {
+      "id": "M09",
+      "stage": "M",
+      "requirement": "Update `PRODUCT.md` and refresh `context.summary`, `context.openThread`, `context.language` **when new information exists**; record explicit no-change reason otherwise."
+    },
+    {
+      "id": "M10",
+      "stage": "M",
+      "requirement": "Check the boundary: discovery stays at ideate/rack; **no bench move, plan, implementation, STAGING.md or STG-* minting** from discovery."
+    }
+  ],
+  "policy": {
+    "operator_unavailable": "Only after draft and request: publish with linked open question, never as confirmed.",
+    "paired_artifact": "L during analysis before routing; six F lenses considered in synthesis.",
+    "blind": "No rack, prior analysis, built material or answer-key context. Log what was withheld.",
+    "one_thing": "Draft at H01; H02 settles only when written to one authorized destination after review.",
+    "ground": "Present four-section picture; no disk write unless specifically requested.",
+    "corpus": "Record stable pointers; no transcript bodies in ledger or stock."
+  },
+  "gates": {
+    "publish": [
+      "A01",
+      "A02",
+      "A03",
+      "N01",
+      "N02",
+      "N03",
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11",
+      "C12",
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D07",
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06",
+      "F07",
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "H01",
+      "H02",
+      "I01",
+      "I02",
+      "I03",
+      "I04",
+      "I05",
+      "J01",
+      "J02",
+      "J03",
+      "J04",
+      "J05",
+      "J06",
+      "K01",
+      "K02",
+      "K03",
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06"
+    ],
+    "deep_comb_fanout": [
+      "E01",
+      "E02",
+      "E04"
+    ]
+  }
+}

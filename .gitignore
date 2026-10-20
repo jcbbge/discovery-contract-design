@@ -1,0 +1,25 @@
+# Local runtime state, credentials and generated artifacts
+__pycache__/
+*.py[cod]
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+.env
+.env.*
+*.log
+*.pid
+*.sock
+.DS_Store
+
+# Agent session transcripts can contain credentials, environment output, and source bodies.
+observer-independent/sessions/
+
+# Design inspections and browser captures (keep the small direction sheet).
+.taste-skill/
+!runtime/.taste-skill/
+runtime/.taste-skill/*
+!runtime/.taste-skill/direction.json
+*.png
+*.jpg
+*.jpeg

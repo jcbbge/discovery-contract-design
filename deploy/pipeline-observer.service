@@ -1,0 +1,14 @@
+[Unit]
+Description=Pipeline Observatory read-only local dashboard
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/jrg/projects/discovery-contract-design/runtime/durable.py serve --port 8787
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=default.target
